@@ -28,12 +28,12 @@
 // 6.2. ✅Album autoriaus vardą. Paspaudus ant vardo - nukreipiama į autoriaus puslapį.
 // 6.3. ✅Skiltis, kurioje atvaizduojamos visos albumo nuotraukos. Panaudoti library (biblioteką), kuri skirta gražiam galerijos atvaizdavimui, pvz.:
 // 6.3.2. ✅https://nanogallery2.nanostudio.org/
-// 7. Sukurti naują puslapį post.html ir jame atvaizduoti:
-// 7.1. Įrašo (post) pavadinimą.
-// 7.2. Autoriaus vardą. Paspaudus ant autoriaus vardo, turėtų atidaryti autoriaus puslapį.
-// 7.3. Įrašo turinį.
-// 7.4. Įrašo komentarus. Komentarai turi būti atvaizduojami tokiu pačiu principu kaip ir pagrindiniame puslapyje.
-// 7.5. Nuoroda „Kiti autoriaus įrašai", kurią paspaudus bus nukreipiama į naują puslapį. Jame bus atvaizduojami visi šio vartotojo įrašai.
+// 7. ✅Sukurti naują puslapį post.html ir jame atvaizduoti:
+// 7.1. ✅Įrašo (post) pavadinimą.
+// 7.2. ✅Autoriaus vardą. Paspaudus ant autoriaus vardo, turėtų atidaryti autoriaus puslapį.
+// 7.3. ✅Įrašo turinį.
+// 7.4. ✅Įrašo komentarus. Komentarai turi būti atvaizduojami tokiu pačiu principu kaip ir pagrindiniame puslapyje.
+// 7.5. ✅Nuoroda „Kiti autoriaus įrašai", kurią paspaudus bus nukreipiama į naują puslapį. Jame bus atvaizduojami visi šio vartotojo įrašai.
 // 8. Sukurti vartotojų puslapį (users.html), kuriame būtų atvaizduotas vartotojų sąrašas.
 // 8.1. Prie vartotojo turėtu būti jo vardas ir parašytų post'ų skaičius.
 // 8.2. Paspaudus ant vartotojo - nukreipiama į jo puslapį.
@@ -47,6 +47,23 @@
 // 10.1. Home / pagrindinis puslapis.
 // 10.2. Users / vartotojų puslapis.
 // 10.3. Albums / albumų puslapis
+// 11. Navigacijos elemente sukurti paieškos laukelį (formą ir text input).
+// 12. Formos submit metu, nukreipti į naują puslapį (search.html).
+// 13. Šiame puslapyje atvaizduoti paieškos rezultatą.
+// 13.1. Jeigu nėra tinkamų rezultatų, tai parašyti, jog rezultatų pagal užklausą nerasta.
+// 14. Filtruoti pagal:
+// 14.1. Tikslų vartotojo username.
+// 14.2. Jeigu neranda pagal username, tada pagal tikslų vartotojo pilną vardą.
+// 14.3. Jeigu neranda pagal username arba pagal tikslu vartotojo pilna vardą, tada pagal tikslų vartotojo el. paštą.
+// 14.4. Tikslų post'o pavadinimą.
+// 14.5. Tikslų albumo pavadinimą.Papildoma:
+// 15. Search puslapyje turi būti paieškos forma, kuri veikia neperkraunant puslapio.
+// 16. Sukurti filtravimo galimybę iš dalies frazės, o nebūtinai pagal tikslią frazę.
+// https://github.com/RomanasV/ca-api-project
+// GitHub - RomanasV/ca-api-project
+// Contribute to RomanasV/ca-api-project development by creating an account on GitHub.
+
+
 let section = document.querySelector('section');
 fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
     .then(res => res.json())

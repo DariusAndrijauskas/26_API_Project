@@ -10,9 +10,9 @@ let commentsDiv = document.createElement('div');
 fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
     .then(res => res.json())
     .then(user => {
-        div.innerHTML += `Name: <a href="mailto:${user.email}">${user.name}</a><br>`;
-        div.innerHTML += `UserName: ${user.username}<br>`;
-        div.innerHTML += `E-mail: ${user.email}<br>`;
+        div.innerHTML += `Name: ${user.name}<br>`;
+        div.innerHTML += `Username: ${user.username}<br>`;
+        div.innerHTML += `E-mail: <a href="mailto:${user.email}">${user.email}</a><br>`;
         div.innerHTML += `Address: <a href='https://www.google.com/maps/search/?api=1&query=${user.address.geo.lat}%2C${user.address.geo.lng}' target='_blank'>${user.address.street} st., ${user.address.suite}, ${user.address.city} City, ${user.address.zipcode}</a><br>`;
         div.innerHTML += `Phone: ${user.phone}<br>`;
         div.innerHTML += `Website: <a href='${user.website}'>${user.website}</a><br>`;

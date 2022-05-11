@@ -6,49 +6,47 @@
 // // 7.5. Nuoroda „Kiti autoriaus įrašai", kurią paspaudus bus nukreipiama į naują puslapį. Jame bus atvaizduojami visi šio vartotojo įrašai.
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-console.log(params);
-let main = document.querySelector('main');
-let ul = document.createElement('ul');
-let divas = document.createElement('div');
-let title = document.createElement('h4');
-let author = document.createElement('a');
-let mainText = document.createElement('p');
-let commentsDiv = document.createElement('div');
-fetch(`https://jsonplaceholder.typicode.com/albums/${params.albumId}`)
+let section = document.querySelector('section');
+fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
     .then(res => res.json())
-    .then(album => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${album.userId}`)
+    .then(post => {
+        let ul = document.createElement('ul');
+        let div = document.createElement('div');
+        let title = document.createElement('h4');
+        let links = document.createElement('span');
+        let mainText = document.createElement('p');
+        let commentsDiv = document.createElement('div');
+        fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
             .then(res => res.json())
             .then(user => {
-                divas.innerHTML += `Title: ${album.title}<br>`;
-                divas.innerHTML += `Author: <a href='./user.html?userId=${album.userId}'>${user.name}</a><br>`;
-                divas.classList.add('user');
-                main.prepend(divas);
-                fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${params.albumId}`)
-                    .then(res => res.json())
-                    .then(photos => {
-                        let items = [];
-                        photos.map(photo => {
-                            let item = {
-                                src: photo.url,
-                                srct: photo.thumbnailUrl,
-                                title: photo.id.toString()
-                            }
-                            items.push(item);
-                        });
-                        jQuery(document).ready(function () {
-                            jQuery("#my_nanogallery2").nanogallery2({
-                                items: items,
-                                thumbnailWidth: 'auto',
-                                thumbnailHeight: 200,
-                                itemsBaseURL: 'https://nanogallery2.nanostudio.org/samples/',
-                                thumbnailBorderVertical: 0,
-                                thumbnailBorderHorizontal: 0,
-                                thumbnailGutterWidth: 10,
-                                thumbnailGutterHeight: 10,
-                                locationHash: false
-                            });
-                        });
-                    });
+                links.innerHTML = `User: <a href="./user.html?userId=${user.id}">${user.name}</a> - <a href="./posts.html?userId=${user.id}">more post by user.</a>`;
+                links.classList.add('linkai');
             });
+            fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
+            .then((res) => res.json())
+            .then(comments => {
+                comments.map(comment => {
+                    let li = document.createElement('li');
+                    li.innerHTML = `User: ${comment.email} says:<br>${comment.body}`;
+                    ul.append(li);
+                });
+            });
+            let span = document.createElement('span');
+            span.textContent = `Show Comments`;
+            span.addEventListener('click', e => {
+                if (commentsDiv.className === `hidden`) {
+                commentsDiv.className = `visible`;
+                span.textContent = `Hide Comments`;
+            } else if (commentsDiv.className === `visible`) {
+                commentsDiv.className = `hidden`;
+                span.textContent = `Show Comments`;
+            }
+        });
+        commentsDiv.className = `hidden`;
+        commentsDiv.append(span, links, ul);
+        title.textContent = post.title;
+        mainText.textContent = post.body;
+        div.classList.add('postas');
+        div.append(title, mainText, commentsDiv);
+        section.append(div);
     });

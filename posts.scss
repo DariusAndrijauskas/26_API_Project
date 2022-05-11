@@ -25,6 +25,13 @@ body {
         margin-left: 30px;
         margin-bottom: 4px;
     }
+
+    a {
+        float: right;
+        text-align: right;
+        margin-bottom: 0;
+    }
+
     ul {
         margin-bottom: 0;
 
@@ -32,12 +39,8 @@ body {
             margin-left: 30px;
         }
     }
-    .linkai {
-        float:right;
-        right:20px;
-        top:20px;
-    }
-    div span:first-of-type {
+
+    span {
         color: white;
         line-height: 27px;
         border-radius: 5px;

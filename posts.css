@@ -20,18 +20,18 @@ body {
   margin-left: 30px;
   margin-bottom: 4px;
 }
+.postas a {
+  float: right;
+  text-align: right;
+  margin-bottom: 0;
+}
 .postas ul {
   margin-bottom: 0;
 }
 .postas ul li {
   margin-left: 30px;
 }
-.postas .linkai {
-  float: right;
-  right: 20px;
-  top: 20px;
-}
-.postas div span:first-of-type {
+.postas span {
   color: white;
   line-height: 27px;
   border-radius: 5px;
@@ -39,7 +39,7 @@ body {
   padding: 3px 7px;
   background-color: rgb(255, 110, 202);
 }
-.postas div span:first-of-type:hover {
+.postas span:hover {
   cursor: pointer;
 }
 
@@ -86,4 +86,4 @@ section {
   max-width: 800px;
   min-width: 474px;
   margin: 0 auto;
-}/*# sourceMappingURL=post.css.map */
+}/*# sourceMappingURL=posts.css.map */
