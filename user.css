@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(3, 255, 200, 0.123);
+}
+
+.user,
+.post {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
+}
+.user h4,
+.post h4 {
+  font-weight: 700;
+}
+.user p,
+.post p {
+  margin-left: 30px;
+  margin-bottom: 4px;
+}
+.user a,
+.post a {
+  margin-bottom: 0;
+}
+.user ul,
+.post ul {
+  margin-bottom: 0;
+}
+.user ul li,
+.post ul li {
+  margin-left: 30px;
+}
+.user span,
+.post span {
+  color: white;
+  border-radius: 5px;
+  padding: 3px 7px;
+  background-color: rgb(252, 143, 182);
+}
+.user span:hover,
+.post span:hover {
+  cursor: pointer;
+}
+
+.post a {
+  float: right;
+}
+
+.hidden {
+  max-height: 25px;
+  overflow: hidden;
+}
+
+.visible {
+  max-height: none;
+}
+
+main {
+  padding: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}/*# sourceMappingURL=user.css.map */

@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(3, 255, 200, 0.123);
+}
+
+.user,
+.post {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
+}
+
+main {
+  padding: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}/*# sourceMappingURL=album.css.map */

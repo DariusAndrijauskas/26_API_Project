@@ -1,0 +1,75 @@
+$backgound-color:rgba(3, 255, 200, 0.123);
+$accent-color: rgb(255, 110, 202);
+$gap: 15px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $backgound-color;
+}
+
+.user,
+.post {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 15px 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
+
+    h4 {
+        font-weight: 700;
+    }
+
+    p {
+        margin-left: 30px;
+        margin-bottom: 4px;
+    }
+
+    a {
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin-bottom: 0;
+
+        li {
+            margin-left: 30px;
+        }
+    }
+
+    span {
+        color: white;
+        border-radius: 5px;
+        padding: 3px 7px;
+        background-color: rgb(252, 143, 182);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.post {
+    a {
+        float: right;
+    }
+}
+
+.hidden {
+    max-height: 25px;
+    overflow: hidden;
+}
+
+.visible {
+    max-height: none;
+}
+
+main {
+    padding: $gap;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
