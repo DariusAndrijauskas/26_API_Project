@@ -33,7 +33,7 @@
 // 7.2. Autoriaus vardą. Paspaudus ant autoriaus vardo, turėtų atidaryti autoriaus puslapį.
 // 7.3. Įrašo turinį.
 // 7.4. Įrašo komentarus. Komentarai turi būti atvaizduojami tokiu pačiu principu kaip ir pagrindiniame puslapyje.
-// // 7.5. Nuoroda „Kiti autoriaus įrašai", kurią paspaudus bus nukreipiama į naują puslapį. Jame bus atvaizduojami visi šio vartotojo įrašai.
+// 7.5. Nuoroda „Kiti autoriaus įrašai", kurią paspaudus bus nukreipiama į naują puslapį. Jame bus atvaizduojami visi šio vartotojo įrašai.
 // 8. Sukurti vartotojų puslapį (users.html), kuriame būtų atvaizduotas vartotojų sąrašas.
 // 8.1. Prie vartotojo turėtu būti jo vardas ir parašytų post'ų skaičius.
 // 8.2. Paspaudus ant vartotojo - nukreipiama į jo puslapį.
@@ -62,7 +62,7 @@ fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
                 .then(res => res.json())
                 .then(user => {
                     author.textContent = user.name;
-                    author.href = `/MainClass/26_API_Project/user.html?userId=${user.id}`
+                    author.href = `./user.html?userId=${user.id}`
                     //    console.log(user);
                 });
             fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
@@ -108,7 +108,7 @@ fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
                         .then(res => res.json())
                         .then(user => {
                             author.textContent = user.name;
-                            author.href = `./MainClass/26_API_Project/user.html?userId=${user.id}`
+                            author.href = `./user.html?userId=${user.id}`
                         });
                     fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${album.id}&_limit=1`)
                         .then((res) => res.json())
