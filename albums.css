@@ -6,26 +6,24 @@ body {
   background-color: rgba(3, 255, 200, 0.123);
 }
 
-h2 {
-  margin: 0 15px;
-}
-
 .postas {
-  display: flex;
-  justify-content: space-between;
   background-color: white;
   border-radius: 15px;
-  padding: 10px 15px;
+  padding: 10px 15px 15px;
   margin: 0 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
 }
 .postas h4 {
   font-weight: 700;
-  margin: 0;
 }
 .postas p {
   margin-left: 30px;
   margin-bottom: 4px;
+}
+.postas a {
+  float: right;
+  text-align: right;
+  margin-bottom: 0;
 }
 .postas ul {
   margin-bottom: 0;
@@ -33,12 +31,7 @@ h2 {
 .postas ul li {
   margin-left: 30px;
 }
-.postas .linkai {
-  float: right;
-  right: 20px;
-  top: 20px;
-}
-.postas div span:first-of-type {
+.postas span {
   color: white;
   line-height: 27px;
   border-radius: 5px;
@@ -46,7 +39,7 @@ h2 {
   padding: 3px 7px;
   background-color: rgb(255, 110, 202);
 }
-.postas div span:first-of-type:hover {
+.postas span:hover {
   cursor: pointer;
 }
 
@@ -73,6 +66,9 @@ h2 {
 .album h4 {
   font-weight: 700;
 }
+.album h5 {
+  font-size: 16px;
+}
 
 .hidden {
   max-height: 27px;
@@ -93,4 +89,4 @@ section {
   max-width: 800px;
   min-width: 474px;
   margin: 0 auto;
-}/*# sourceMappingURL=users.css.map */
+}/*# sourceMappingURL=albums.css.map */

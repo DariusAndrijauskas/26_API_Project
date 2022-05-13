@@ -6,76 +6,25 @@ body {
   background-color: rgba(3, 255, 200, 0.123);
 }
 
-.postas {
+header {
+  margin: 0 auto;
   background-color: white;
-  border-radius: 15px;
-  padding: 10px 15px 15px;
-  margin: 0 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
 }
-.postas h4 {
-  font-weight: 700;
-}
-.postas p {
-  margin-left: 30px;
-  margin-bottom: 4px;
-}
-.postas a {
-  float: right;
-  text-align: right;
-  margin-bottom: 0;
-}
-.postas ul {
-  margin-bottom: 0;
-}
-.postas ul li {
-  margin-left: 30px;
-}
-.postas span {
-  color: white;
-  line-height: 27px;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.386);
-  padding: 3px 7px;
-  background-color: rgb(255, 110, 202);
-}
-.postas span:hover {
-  cursor: pointer;
-}
-
-.album {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 15px;
-  background-color: white;
-  border-radius: 15px;
-  padding: 15px 15px;
-  margin: 0 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
-}
-.album .image {
-  border-radius: 7.5px;
+header div.container {
+  padding: 15px 30px;
   display: flex;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 15px;
+  max-width: 800px;
+  min-width: 474px;
+  margin: 0 auto;
 }
-.album .image img {
-  width: 150px;
-}
-.album h4 {
-  font-weight: 700;
-}
-
-.hidden {
-  max-height: 27px;
-  overflow: hidden;
-}
-
-.visible {
-  max-height: -webkit-max-content;
-  max-height: -moz-max-content;
-  max-height: max-content;
+header div.container a {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
 }
 
 section {
@@ -86,4 +35,78 @@ section {
   max-width: 800px;
   min-width: 474px;
   margin: 0 auto;
+}
+section .postas {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 15px 15px;
+  margin: 0 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
+}
+section .postas h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+section .postas p {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+section .postas a:first-child {
+  display: block;
+}
+section .postas a:last-of-type {
+  float: right;
+  text-align: right;
+  margin-bottom: 0;
+}
+section .postas ul {
+  margin-bottom: 0;
+}
+section .postas ul li {
+  margin-left: 30px;
+}
+section .postas span {
+  margin-bottom: 15px;
+  display: inline-block;
+  color: white;
+  line-height: 27px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.386);
+  padding: 0 7px;
+  background-color: rgb(255, 110, 202);
+}
+section .postas span:hover {
+  cursor: pointer;
+}
+section .album {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px 15px;
+  margin: 0 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
+}
+section .album .image {
+  border-radius: 7.5px;
+  display: flex;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+section .album .image img {
+  width: 150px;
+}
+section .album h4 {
+  font-weight: 700;
+}
+section .hidden {
+  max-height: 29px;
+  overflow: hidden;
+}
+section .visible {
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
 }/*# sourceMappingURL=index.css.map */

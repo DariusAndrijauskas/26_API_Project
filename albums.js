@@ -36,12 +36,12 @@
 // 8.   ✅Sukurti vartotojų puslapį (users.html), kuriame būtų atvaizduotas vartotojų sąrašas.
 // 8.1. ✅Prie vartotojo turėtu būti jo vardas ir parašytų post'ų skaičius.
 // 8.2. ✅Paspaudus ant vartotojo - nukreipiama į jo puslapį.
-// 9.   ✅Tokiu pačiu principu, kaip ir vartotojų puslapį, sukurti puslapį albumams (albums.html).
-// 9.1. ✅Prie kiekvieno albumo turi būti:
-// 9.1.1✅Parašytas jo pavadinimas.
-// 9.1.2✅Parašytas vartotojo, sukūrusio šį albumą, vardas.
-// 9.1.3✅Albume esančių nuotraukų skaičius.
-// 9.1.4✅Viena nuotrauka
+// 9. Tokiu pačiu principu, kaip ir vartotojų puslapį, sukurti puslapį albumams (albums.html).
+// 9.1. Prie kiekvieno albumo turi būti:
+// 9.1.1. Parašytas jo pavadinimas.
+// 9.1.2. Parašytas vartotojo, sukūrusio šį albumą, vardas.
+// 9.1.3. Albume esančių nuotraukų skaičius.
+// 9.1.4. Viena nuotrauka
 // 10. Sukurti navigacijos elementą, kuris nukreips į puslapius:
 // 10.1. Home / pagrindinis puslapis.
 // 10.2. Users / vartotojų puslapis.
@@ -64,90 +64,39 @@
 
 
 let section = document.querySelector('section');
-fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+fetch('https://jsonplaceholder.typicode.com/albums?_limit=10')
     .then(res => res.json())
-    .then(posts => {
-        posts.map(post => {
-            let ul = document.createElement('ul');
+    .then(albums => {
+        albums.map(album => {
             let div = document.createElement('div');
             let title = document.createElement('h4');
             let author = document.createElement('a');
-            let mainText = document.createElement('p');
-            let commentsDiv = document.createElement('div');
-            fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
-                .then(res => res.json())
-                .then(user => {
-                    author.textContent = user.name;
-                    author.href = `./user.html?userId=${user.id}`
-                    //    console.log(user);
-                });
-            fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
-                .then((res) => res.json())
-                .then(comments => {
-                    comments.map(comment => {
-                        let li = document.createElement('li');
-                        li.innerHTML = `User: <strong>${comment.email}</strong> says:<br>${comment.body}`;
-                        ul.append(li);
+            let img = document.createElement('img');
+            let divImg = document.createElement('div');
+            let divText = document.createElement('div');
+            let photoNr = document.createElement('h5')
+            fetch(`https://jsonplaceholder.typicode.com/users/${album.userId}`)
+            .then(res => res.json())
+            .then(user => {
+                author.textContent = user.name;
+                author.href = `./user.html?userId=${user.id}`
+            });
+            fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${album.id}`)
+            .then((res) => res.json())
+                .then(photos => {
+                    photoNr.textContent = `Number of photos: ${photos.length}`;
+                    photos.map(photo => {
+                        img.src = photo.thumbnailUrl;
+                        divImg.append(img);
+                        divImg.classList.add('image');
                     });
                 });
-            let span = document.createElement('span');
-            span.textContent = `Show Comments`;
-            span.addEventListener('click', e => {
-                if (commentsDiv.className === `hidden`) {
-                    commentsDiv.className = `visible`;
-                    span.textContent = `Hide Comments`;
-                } else if (commentsDiv.className === `visible`) {
-                    commentsDiv.className = `hidden`;
-                    span.textContent = `Show Comments`;
-                }
-            });
-            commentsDiv.className = `hidden`;
-            commentsDiv.append(span);
-            let a = document.createElement('a');
-            a.href = `./post.html?postId=${post.id}`;
-            a.append(title);
-            title.textContent = post.title;
-            mainText.textContent = post.body;
-            div.classList.add('postas');
-            commentsDiv.append(ul);
-            div.append(a, mainText, author, commentsDiv);
+
+            divText.append(title, author, photoNr);
+            div.append(divImg);
+            div.append(divText);
+            title.innerHTML = `<a href='./album.html?albumId=${album.id}'>${album.title}</a>`;
+            div.classList.add('album');
             section.append(div);
         });
-        fetch('https://jsonplaceholder.typicode.com/albums?_limit=10')
-            .then(res => res.json())
-            .then(albums => {
-                albums.map(album => {
-                    let div = document.createElement('div');
-                    let title = document.createElement('h4');
-                    let author = document.createElement('a');
-                    let img = document.createElement('img');
-                    let divImg = document.createElement('div');
-                    let divText = document.createElement('div');
-                    fetch(`https://jsonplaceholder.typicode.com/users/${album.userId}`)
-                        .then(res => res.json())
-                        .then(user => {
-                            author.textContent = user.name;
-                            author.href = `./user.html?userId=${user.id}`
-                        });
-                    fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${album.id}&_limit=1`)
-                        .then((res) => res.json())
-                        .then(photos => {
-                            photos.map(photo => {
-                                img.src = photo.thumbnailUrl;
-                                divImg.append(img);
-                                divImg.classList.add('image');
-                            });
-                        });
-
-                        divText.append(title, author);
-                    div.append(divImg);
-                    div.append(divText);
-                    title.innerHTML = `<a href='./album.html?albumId=${album.id}'>${album.title}</a>`;
-                    div.classList.add('album');
-                    section.append(div);
-                });
-            });
     });
-
-
-    

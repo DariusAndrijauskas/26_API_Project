@@ -1,7 +1,6 @@
 $backgound-color:rgba(3, 255, 200, 0.123);
-$accent-color: rgb(255, 110, 202);
+$accent-color:  rgb(255, 110, 202);
 $gap: 15px;
-
 * {
     box-sizing: border-box;
 }
@@ -9,26 +8,26 @@ $gap: 15px;
 body {
     background-color: $backgound-color;
 }
-h2 {
-    margin: 0 $gap;
-}
+
 .postas {
-    display:flex;
-    justify-content: space-between;
     background-color: white;
     border-radius: $gap;
-    padding: ($gap - 5) $gap;
+    padding: 10px $gap $gap;
     margin: 0 $gap;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
-
     h4 {
         font-weight: 700;
-        margin:0;
     }
-
+   
     p {
         margin-left: 30px;
         margin-bottom: 4px;
+    }
+
+    a {
+        float: right;
+        text-align: right;
+        margin-bottom: 0;
     }
     ul {
         margin-bottom: 0;
@@ -37,25 +36,19 @@ h2 {
             margin-left: 30px;
         }
     }
-    .linkai {
-        float:right;
-        right:20px;
-        top:20px;
-    }
-    div span:first-of-type {
+    
+    span {
         color: white;
         line-height: 27px;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.386);
         padding: 3px 7px;
         background-color: $accent-color;
-
         &:hover {
             cursor: pointer;
         }
     }
 }
-
 .album {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -65,33 +58,30 @@ h2 {
     padding: $gap $gap;
     margin: 0 $gap;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px;
-
     .image {
         border-radius: $gap/2;
         display: flex;
         overflow: hidden;
-        width: 150px;
-        height: 150px;
-
+        width:150px;
+        height:150px;
         img {
-            width: 150px;
+            width:150px;
         }
     }
-
     h4 {
         font-weight: 700;
     }
+    h5 {
+        font-size: 16px;
+    }
 }
-
 .hidden {
     max-height: 27px;
     overflow: hidden;
 }
-
 .visible {
-    max-height: max-content;
+    max-height:max-content;
 }
-
 section {
     padding-top: $gap;
     display: flex;

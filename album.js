@@ -21,7 +21,7 @@ fetch(`https://jsonplaceholder.typicode.com/albums/${params.albumId}`)
         fetch(`https://jsonplaceholder.typicode.com/users/${album.userId}`)
             .then(res => res.json())
             .then(user => {
-                divas.innerHTML += `Title: ${album.title}<br>`;
+                divas.innerHTML += `Title: <strong>${album.title}</strong><br>`;
                 divas.innerHTML += `Author: <a href='./user.html?userId=${album.userId}'>${user.name}</a><br>`;
                 divas.classList.add('user');
                 main.prepend(divas);
